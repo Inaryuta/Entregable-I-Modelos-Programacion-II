@@ -31,6 +31,6 @@ El objetivo es simular la interacción entre los músicos y los instrumentos, do
 
 A continuación se presenta el diagrama de secuencia que ilustra el flujo principal del programa, desde la inicialización de los objetos `Instrumento` y `Musico` hasta la asignación de instrumentos y la ejecución de la chisga musical.
 
-![Diagrama de Secuencia](https://github.com/Inaryuta/Modelos-II/blob/master/Chizga/DiagramaSecuencia.png)
+![Diagrama de Secuencia](https://github.com/Inaryuta/Modelos-II/blob/master/Chizga/Diagram/DiagramaSecuencia.png)
 
 ---
