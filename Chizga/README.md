@@ -4,18 +4,15 @@ Universidad Distrital Francisco José de Caldas
 Proyecto Curricular de Ingeniería de Sistemas
 
 **Asignatura:** Modelos de Programación II  
-**Profesor:** ALEJANDRO PAOLO DAZA CORREDOR
+**Profesor:** Alejandro Paolo Daza Corredor
 
 ---
 
 ## Integrantes
 
-- Amir Zoleyt Vanegas Cárdenas - 20211020015
-azvanegasc@udistrital.edu.co
-- Esteban Alejandro Villalba Delgadillo - 20212020064
-eavillalbad@udistrital.edu.co
-- Samuel Antonio Sanchez Peña - 20212020151
-samasanchezp@udistrital.edu.co
+- Amir Zoleyt Vanegas Cárdenas - 20211020015 <br> azvanegasc@udistrital.edu.co
+- Esteban Alejandro Villalba Delgadillo - 20212020064 <br> eavillalbad@udistrital.edu.co
+- Samuel Antonio Sanchez Peña - 20212020151 <br> samasanchezp@udistrital.edu.co
 
 ---
 
@@ -26,6 +23,12 @@ Este proyecto consiste en la creación de una chisga musical, un conjunto de mú
 ### Objetivo
 
 El objetivo es simular la interacción entre los músicos y los instrumentos, donde cada músico es asignado a un instrumento de manera aleatoria y debe tocarlo en una sesión musical. La lógica para esta simulación se implementa en un flujo de trabajo que está representado en el diagrama de secuencia a continuación.
+
+### Diagrama de Clases
+
+El siguiente diagrama de clases muestra la estructura de las clases utilizadas en el proyecto, destacando las relaciones entre `Instrumento`, `Musico`, y `Banda`. Este diagrama proporciona una visión general de cómo se organizan las entidades principales y cómo interactúan entre sí dentro del sistema.
+
+![Diagrama de Clases]()
 
 ###  Diagrama de Secuencia
 
