@@ -85,6 +85,8 @@ loop in banda_preparada.getMusicos()
     "musicos: Musico" --> Banda : musicos
     Banda --> Main: musicos
 else for musico
+    Main -> Musico: musico.afinar()
+    Musico -> Instrumento: self.instrumento.ajustarFrecuencia()
     Main -> Musico: musico.tocar()
     Musico -> Instrumento: self.instrumento.emitirSonido()
 end loop

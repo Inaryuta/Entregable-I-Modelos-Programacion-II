@@ -72,6 +72,12 @@ package "banda" {
             +ajustarFrecuencias()
             +emitirSonido()
         }
+
+        note as nota1
+            El paquete instrumento está
+            representado por el archivo
+            instrumento.py
+        end note
     }
 
     Banda o-- Musico
@@ -87,6 +93,7 @@ package "interfaces" {
 class Main {
     + {static} main()
 }
+
 
 'Terceras relaciones'
 Main <. banda.Banda

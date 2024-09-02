@@ -36,7 +36,7 @@ La aplicación hace uso de las siguientes bibliotecas para su debido funcionamie
 
 Es importante notar que la biblioteca ABC obliga a la creación de una carpeta de las intefaces para la construcción del programa. Así mismo, por la naturaleza de Python se llaman a los métodos __new__() e __init__() para la instanciación del objeto con sus atributos.
 
-Las características de diseño del programa se muestran a continuación en los siguientes diagramas UML:
+Las características de diseño del programa se encuentran en la carpeta diagramas. A continuación, se muestran los diagramas UML correspondientes al diseño.
 
 ### Diagrama de Clases
 
