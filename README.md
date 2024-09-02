@@ -28,12 +28,12 @@ El objetivo es simular la interacción entre los músicos y los instrumentos, do
 
 El siguiente diagrama de clases muestra la estructura de las clases utilizadas en el proyecto, destacando las relaciones entre `Banda`, `Musico`, `Instrumento`, y `EventoMusical`. Este diagrama proporciona una visión general de cómo se organizan las entidades principales y cómo interactúan entre sí dentro del sistema.
 
-![Diagrama de Clases](https://github.com/Inaryuta/Modelos-II/blob/master/diagramas/imagenes/DiagramaClases.png)
+![Diagrama de Clases](https://github.com/Inaryuta/Modelos-II/blob/master/diagramas/imagenes/Diagrama%de%Clases.png)
 
 ###  Diagrama de Secuencia
 
 A continuación se presenta el diagrama de secuencia que ilustra el flujo principal del programa, desde la inicialización de los objetos `Instrumento` y `Musico` hasta la asignación de instrumentos y la ejecución de la chisga musical.
 
-![Diagrama de Secuencia](https://github.com/Inaryuta/Modelos-II/blob/master/diagramas/imagenes/DiagramaSecuencia.png)
+![Diagrama de Secuencia](https://github.com/Inaryuta/Modelos-II/blob/master/diagramas/imagenes/Diagrama%de%Secuencia.png)
 
 ---
