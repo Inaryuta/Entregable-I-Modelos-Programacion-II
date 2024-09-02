@@ -1,0 +1,84 @@
+@startuml Diagrama de Secuencia
+actor Usuario
+participant Main
+participant Banda
+participant "musicos: Musico"
+participant Musico
+participant "instrumentos: Instrumento"
+participant Instrumento
+
+
+Usuario -> Main : main()
+activate Main
+
+create "instrumentos: Instrumento"
+Main -> "instrumentos: Instrumento" : instrumentos = [...]
+
+group instantiate [10 times]
+    create Instrumento
+    "instrumentos: Instrumento" -> Instrumento : new Instrumento()
+    activate "instrumentos: Instrumento"
+
+    note right of "instrumentos: Instrumento"
+        Se asignan guitarras,
+        violines, pianos y otros
+        a la lista de instrumentos
+    end note
+
+    Instrumento -> Instrumento: __new__()
+    activate Instrumento
+
+    Instrumento --> "instrumentos: Instrumento"
+    "instrumentos: Instrumento" -> Instrumento: __init__(self)
+end
+"instrumentos: Instrumento" --> Main : instrumentos
+
+
+
+create "musicos: Musico"
+Main -> "musicos: Musico" : musicos = [...]
+
+group instantiate [10 times]
+    create Musico
+    "musicos: Musico" -> Musico: new Musico("{nombre}")
+    activate "musicos: Musico"
+
+    Musico -> Musico: __new__()
+    activate Musico
+
+    Musico --> "musicos: Musico"
+    "musicos: Musico" -> Musico: __init__(self, nombre)
+end
+"musicos: Musico" --> Main: musicos
+
+
+Main -> Banda : banda = (instrumentos, musicos)
+activate Banda
+Banda -> Banda : __new__()
+activate Banda
+Banda --> Main: banda
+Main -> Banda : __init__(self, instrumentos, musicos)
+deactivate Banda
+Main -> Banda : banda_preparada = banda.llamarMusicosAleatorio()
+activate Banda
+Banda -> Banda : __new__()
+Banda -> Banda : asignarInstrumentos()
+Banda --> Main : banda_preparada
+
+loop in banda_preparada.getMusicos()
+    Main -> Banda : banda_preparada.getMusicos()
+    Banda -> "musicos: Musico" : self.musicos.getMusicos()
+    "musicos: Musico" --> Banda : musicos
+    Banda --> Main: musicos
+else for musico
+    Main -> Musico: musico.tocar()
+    Musico -> Instrumento: self.instrumento.emitirSonido()
+end loop
+
+destroy Instrumento
+destroy "instrumentos: Instrumento"
+destroy Musico
+destroy "musicos: Musico"
+destroy Banda
+destroy Main
+@enduml

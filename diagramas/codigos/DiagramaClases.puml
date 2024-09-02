@@ -1,0 +1,113 @@
+@startuml Diagrama de Clases
+
+'Primeras relaciones'
+package "Banda musical" {
+    interface Instrumento {
+        +{abstract} setFrecuencia(frecuencia: float)
+        +{abstract} getFrecuencia()
+        +{abstract} emitirSonido()
+    }
+
+    class Guitarra {
+        +setFrecuencia(frecuencia: float)
+        +getFrecuencia()
+        +emitirSonido()
+    }
+
+    class Trompeta {
+        +setFrecuencia(frecuencia: float)
+        +getFrecuencia()
+        +emitirSonido()
+    }
+
+    class Violin  {
+        +setFrecuencia(frecuencia: float)
+        +getFrecuencia()
+        +emitirSonido()
+    }
+
+    class Musico  {
+        -nombre: String
+        -instrumento: Instrumento
+        +tocar()
+        +afinar()
+        +getInstrumento(): Instrumento
+        +setInstrumento(instrumento: Instrumento)
+    }
+
+    class Banda {
+        -instrumentos: Instrumento[]
+        -musicos: Musico[]
+        +llamarMusicos(cantidad: int): Musico[]
+        -asignarInstrumentos(numero: int)
+        +setInstrumentos(instrumentos: Instrumento[])
+        +setMusicos(musicos: Musico[])
+        +getInstrumentos(): Instrumento[]
+        +getMusicos(): Musico[]
+    }
+
+    class Accesorio {
+        -instrumentoComplementar: Instrumento
+        +agregar(utilidad: Instrumento)
+    }
+
+    class Microfono {
+
+    }
+
+    Musico o-> Instrumento
+    Banda o-- Musico
+    Banda o-- Instrumento
+    Instrumento <|.. Guitarra
+    Instrumento <|.. Violin
+    Instrumento <|.. Trompeta
+    Instrumento <|.. Accesorio
+    Instrumento <--o Accesorio
+    Accesorio <|-- Microfono
+}
+
+package "Main" {
+    class Main {
+        + {static} main()
+    }
+}
+
+package "Evento Musical" {
+    'Parte separada'
+    interface Sitio {
+        + {abstract} instalarInfraestructura()
+        + {abstract} ingresarPersonas()
+    }
+
+    class Concierto {
+        # sitio: Sitio
+        # banda: Banda
+        + setSitio(sitio: Sitio)
+        + getSitio(): Sitio
+        + setBanda(banda: Banda)
+        + getBanda(): Banda
+        + iniciarConcierto()
+        - asignarMusicos()
+    }
+
+    class Bar {
+        + instalarInfraestructura()
+        + ingresarPersonas()
+    }
+
+    class Teatro {
+        + instalarInfraestructura()
+        + ingresarPersonas()
+    }
+
+    Concierto o-> Sitio
+    Concierto <|-- Serenata
+    Sitio <|.. Bar
+    Sitio <|.. Teatro
+}
+
+'Terceras relaciones'
+Banda ..> Main
+Main <.. Concierto
+Banda <-- Concierto
+@enduml
