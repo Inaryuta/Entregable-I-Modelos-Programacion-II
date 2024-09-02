@@ -14,6 +14,7 @@ def main():
         Bateria(),
         Acordeon()
     ]
+    
     # Instancia de músicos
     musicos = [
         Musico("Samuel"),
@@ -27,12 +28,14 @@ def main():
         Musico("Sara"),
         Musico("Amir")
     ]
+
     # Crear la banda y asignar instrumentos a los músicos aleatoriamente
     banda = Banda(instrumentos, musicos)
-    musicos_seleccionados = banda.llamarMusicosAleatorio()
+    banda_preparada = banda.llamarMusicosAleatorio()
 
     # Hacer que los músicos seleccionados toquen sus instrumentos
-    for musico in musicos_seleccionados:
+    for musico in banda_preparada:
+        musico.afinar()
         musico.tocar()
 
 if __name__ == "__main__":

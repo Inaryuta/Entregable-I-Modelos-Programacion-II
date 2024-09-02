@@ -1,6 +1,10 @@
 from abc import ABC, abstractmethod
 
-class InstrumentoInterface(ABC):
+class Instrumento(ABC):
     @abstractmethod
     def emitirSonido(self):
+        pass
+
+    @abstractmethod
+    def ajustarFrecuencias(self):
         pass

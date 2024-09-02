@@ -1,3 +1,3 @@
-from .instrumento_interface import InstrumentoInterface
+from .instrumento_interface import Instrumento
 
-__all__ = ["InstrumentoInterface"]
+__all__ = ["Instrumento"]

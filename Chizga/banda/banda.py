@@ -1,19 +1,20 @@
 import random
 from .musico import Musico
-from .instrumento import Instrumento
+from interfaces.instrumento_interface import Instrumento
 
 class Banda:
-    def __init__(self, instrumentos, musicos):
+    def __init__(self, instrumentos: Instrumento, musicos: Musico):
         self.instrumentos = instrumentos
         self.musicos = musicos
 
     def llamarMusicosAleatorio(self):
-        
-        musicos_seleccionados = random.sample(self.musicos, len(self.instrumentos))
-        instrumentos_seleccionados = random.sample(self.instrumentos, len(self.instrumentos))
+        cantidad_aleatoria = random.randint(1, len(self.musicos))
+
+        musicos_seleccionados = random.sample(self.musicos, cantidad_aleatoria)
+        instrumentos_seleccionados = random.sample(self.instrumentos, cantidad_aleatoria)
         
         for musico, instrumento in zip(musicos_seleccionados, instrumentos_seleccionados):
-            musico.asignarInstrumento(instrumento)
+            musico.setInstrumento(instrumento)
         
         return musicos_seleccionados
 
