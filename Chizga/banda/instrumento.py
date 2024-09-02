@@ -75,7 +75,7 @@ class Bateria(Instrumento):
         print("Batería suena.")
 
     def ajustarFrecuencias(self):
-        print("\nCaja de la batería afinada a 155Hz")
+        print("Caja de la batería afinada a 155Hz")
         print("Tom-Toms afinados a 220 Hz")
         print("Bombos afinandos a 41.20 Hz")
 
