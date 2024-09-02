@@ -96,5 +96,6 @@ destroy "instrumentos: Instrumento"
 destroy Musico
 destroy "musicos: Musico"
 destroy Banda
+destroy Banda
 destroy Main
 @enduml
