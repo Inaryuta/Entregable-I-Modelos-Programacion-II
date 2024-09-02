@@ -42,13 +42,13 @@ Las características de diseño del programa se encuentran en la carpeta diagram
 
 El siguiente diagrama de clases muestra la estructura de las clases utilizadas en el proyecto, destacando las relaciones entre clases de los paquetes `banda`, `instrumento`, e `interfaces`. Este diagrama proporciona una visión general de cómo se organizan las entidades principales y cómo interactúan entre sí dentro del sistema.
 
-![Diagrama de Clases](https://github.com/Inaryuta/Modelos-II/blob/master/diagramas/imagenes/Diagrama%20de%20Clases.png)
+![Diagrama de Clases](https://github.com/Inaryuta/Entregable-I-Modelos-Programacion-II/blob/master/diagramas/imagenes/Diagrama%20de%20Clases.png)
 
 ###  Diagrama de Secuencia
 
 A continuación, se presenta el diagrama de secuencia que ilustra el flujo principal de ejecución del programa, desde la inicialización de los objetos `Musicos` y las implementaciones de la interfaz `Instrumento`, terminando en la asignación de instrumentos y la ejecución de la banda formada aleatoriamente para la chisga musical.
 
-![Diagrama de Secuencia](https://github.com/Inaryuta/Modelos-II/blob/master/diagramas/imagenes/Diagrama%20de%20Secuencia.png)
+![Diagrama de Secuencia](https://github.com/Inaryuta/Entregable-I-Modelos-Programacion-II/blob/master/diagramas/imagenes/Diagrama%20de%20Secuencia.png)
 
 ### Instrucciones de ejecución
 
