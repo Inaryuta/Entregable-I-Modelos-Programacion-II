@@ -16,7 +16,7 @@ Main -> "instrumentos: Instrumento" : instrumentos = [...]
 
 group instantiate [10 times]
     create Instrumento
-    "instrumentos: Instrumento" -> Instrumento : new Instrumento()
+    "instrumentos: Instrumento" -> Instrumento : Instrumento()
     activate "instrumentos: Instrumento"
 
     note right of "instrumentos: Instrumento"
@@ -40,7 +40,7 @@ Main -> "musicos: Musico" : musicos = [...]
 
 group instantiate [10 times]
     create Musico
-    "musicos: Musico" -> Musico: new Musico("{nombre}")
+    "musicos: Musico" -> Musico: Musico("{nombre}")
     activate "musicos: Musico"
 
     Musico -> Musico: __new__()
@@ -62,7 +62,21 @@ deactivate Banda
 Main -> Banda : banda_preparada = banda.llamarMusicosAleatorio()
 activate Banda
 Banda -> Banda : __new__()
-Banda -> Banda : asignarInstrumentos()
+
+loop in musicos_selecionados, instrumentos_seleccionados
+    Banda -> Banda: zip(musicos_seleccionados, instrumentos_seleccionados)
+
+    note right of Banda
+        Se seleccionaron aleatoriamente
+        un número n de los totales
+        de instrumentos y músicos
+    end note
+
+else for musico, instrumento
+    Banda -> Musico: musico.setInstrumento(instrumento)
+end loop
+
+
 Banda --> Main : banda_preparada
 
 loop in banda_preparada.getMusicos()

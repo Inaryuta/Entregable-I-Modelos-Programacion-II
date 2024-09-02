@@ -1,113 +1,99 @@
 @startuml Diagrama de Clases
+!pragma layout smetana
 
 'Primeras relaciones'
-package "Banda musical" {
-    interface Instrumento {
-        +{abstract} setFrecuencia(frecuencia: float)
-        +{abstract} getFrecuencia()
-        +{abstract} emitirSonido()
-    }
-
-    class Guitarra {
-        +setFrecuencia(frecuencia: float)
-        +getFrecuencia()
-        +emitirSonido()
-    }
-
-    class Trompeta {
-        +setFrecuencia(frecuencia: float)
-        +getFrecuencia()
-        +emitirSonido()
-    }
-
-    class Violin  {
-        +setFrecuencia(frecuencia: float)
-        +getFrecuencia()
-        +emitirSonido()
-    }
-
+package "banda" {
     class Musico  {
-        -nombre: String
+        -nombre: str
         -instrumento: Instrumento
+
+        +__init__(self, nombre: str)
         +tocar()
         +afinar()
-        +getInstrumento(): Instrumento
         +setInstrumento(instrumento: Instrumento)
     }
 
     class Banda {
-        -instrumentos: Instrumento[]
-        -musicos: Musico[]
-        +llamarMusicos(cantidad: int): Musico[]
-        -asignarInstrumentos(numero: int)
-        +setInstrumentos(instrumentos: Instrumento[])
-        +setMusicos(musicos: Musico[])
-        +getInstrumentos(): Instrumento[]
-        +getMusicos(): Musico[]
+        -instrumentos: Instrumento
+        -musicos: Musico
+
+        +__init__(self, instrumentos: Instrumento, musicos: Musico)
+        +llamarMusicosAleatorio(): Musico
+        +getMusicos(): Musico
     }
 
-    class Accesorio {
-        -instrumentoComplementar: Instrumento
-        +agregar(utilidad: Instrumento)
+    package "instrumento" {
+        class Guitarra {
+            +ajustarFrecuencias()
+            +emitirSonido()
+        }
+
+        class Trompeta {
+            +ajustarFrecuencias()
+            +emitirSonido()
+        }
+
+        class Violin  {
+            +ajustarFrecuencias()
+            +emitirSonido()
+        }
+
+        class Piano  {
+            +ajustarFrecuencias()
+            +emitirSonido()
+        }
+
+        class Saxofon  {
+            +ajustarFrecuencias()
+            +emitirSonido()
+        }
+
+        class Bajo  {
+            +ajustarFrecuencias()
+            +emitirSonido()
+        }
+
+        class Xilofono  {
+            +ajustarFrecuencias()
+            +emitirSonido()
+        }
+
+        class Flauta  {
+            +ajustarFrecuencias()
+            +emitirSonido()
+        }
+
+        class Bateria  {
+            +ajustarFrecuencias()
+            +emitirSonido()
+        }
+
+        class Acordeon  {
+            +ajustarFrecuencias()
+            +emitirSonido()
+        }
     }
 
-    class Microfono {
-
-    }
-
-    Musico o-> Instrumento
     Banda o-- Musico
-    Banda o-- Instrumento
-    Instrumento <|.. Guitarra
-    Instrumento <|.. Violin
-    Instrumento <|.. Trompeta
-    Instrumento <|.. Accesorio
-    Instrumento <--o Accesorio
-    Accesorio <|-- Microfono
 }
 
-package "Main" {
-    class Main {
-        + {static} main()
+package "interfaces" {
+    interface Instrumento {
+        +{abstract} ajustarFrecuencias()
+        +{abstract} emitirSonido()
     }
 }
 
-package "Evento Musical" {
-    'Parte separada'
-    interface Sitio {
-        + {abstract} instalarInfraestructura()
-        + {abstract} ingresarPersonas()
-    }
-
-    class Concierto {
-        # sitio: Sitio
-        # banda: Banda
-        + setSitio(sitio: Sitio)
-        + getSitio(): Sitio
-        + setBanda(banda: Banda)
-        + getBanda(): Banda
-        + iniciarConcierto()
-        - asignarMusicos()
-    }
-
-    class Bar {
-        + instalarInfraestructura()
-        + ingresarPersonas()
-    }
-
-    class Teatro {
-        + instalarInfraestructura()
-        + ingresarPersonas()
-    }
-
-    Concierto o-> Sitio
-    Concierto <|-- Serenata
-    Sitio <|.. Bar
-    Sitio <|.. Teatro
+class Main {
+    + {static} main()
 }
 
 'Terceras relaciones'
-Banda ..> Main
-Main <.. Concierto
-Banda <-- Concierto
+Main <. banda.Banda
+
+interfaces.Instrumento <-o banda.Musico
+interfaces.Instrumento --o banda.Banda
+
+interfaces.Instrumento <|.. banda.instrumento
+
 @enduml

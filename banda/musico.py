@@ -2,7 +2,7 @@ import time
 from interfaces.instrumento_interface import Instrumento
 
 class Musico:
-    def __init__(self, nombre):
+    def __init__(self, nombre: str):
         self.nombre = nombre
         self.instrumento = None
 
