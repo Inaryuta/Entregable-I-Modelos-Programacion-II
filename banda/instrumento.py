@@ -5,9 +5,9 @@ class Guitarra(Instrumento):
         print("Guitarra suena.")
     
     def ajustarFrecuencias(self):
-        print("""Frecuencias de cuerdas de guitarra 
-              ajustadas a 2.41 Hz, 110 Hz, 146.83 Hz, 196.00 Hz, 
-              246.94 Hz y 329.63 Hz""")
+        print("Frecuencias de cuerdas de guitarra") 
+        print("ajustadas a 2.41 Hz, 110 Hz, 146.83 Hz, 196.00 Hz") 
+        print("246.94 Hz y 329.63 Hz")
 
 
 class Trompeta(Instrumento):
@@ -23,9 +23,9 @@ class Violin(Instrumento):
         print("Violín suena.")
     
     def ajustarFrecuencias(self):
-        print("""Frecuencia de cuerdas de violín 
-              ajustadas a 196 Hz, 293.66 Hz, 440 Hz, 
-              y 659.26 Hz""")
+        print("Frecuencia de cuerdas de violín")
+        print("ajustadas a 196 Hz, 293.66 Hz, 440 Hz")
+        print("y 659.26 Hz")
 
 
 class Piano(Instrumento):
@@ -49,9 +49,9 @@ class Bajo(Instrumento):
         print("Bajo suena.")
     
     def ajustarFrecuencias(self):
-        print("""Frecuencia de cuerdas de bajo 
-              ajustadas a 41.20 Hz, 55.00 Hz, 73.42 Hz, 
-              y 98.00 Hz""")
+        print("Frecuencia de cuerdas de bajo") 
+        print("ajustadas a 41.20 Hz, 55.00 Hz, 73.42 Hz")      
+        print("y 98.00 Hz")
 
 
 class Xilofono(Instrumento):
