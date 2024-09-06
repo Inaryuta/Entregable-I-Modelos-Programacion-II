@@ -34,7 +34,7 @@ La aplicación hace uso de las siguientes bibliotecas para su debido funcionamie
 
 - ABC: Abstract Base Classes, biblioteca para la construcción de software orientado a objetos con características como clases abstractas o interfaces. Es de utilidad para la representación adecuada del diseño.
 
-Es importante notar que la biblioteca ABC obliga a la creación de una carpeta de las intefaces para la construcción del programa. Así mismo, por la naturaleza de Python se llaman a los métodos __new__() e __init__() para la instanciación del objeto con sus atributos.
+Es importante notar que la biblioteca ABC obliga a la creación de una carpeta de las intefaces para la construcción del programa. Así mismo, por la naturaleza de los objetos en Python, siempre hay llamados implíticos de los métodos __new__() e __init__() para la instanciación del objeto con sus atributos.
 
 Las características de diseño del programa se encuentran en la carpeta diagramas. A continuación, se muestran los diagramas UML correspondientes al diseño.
 
@@ -58,12 +58,12 @@ Estas son las siguientes instrucciones para ejecutar el proyecto:
 
 1. **Clonar el repositorio:**
 ```bash
-   git clone https://github.com/Inaryuta/Modelos-II.git
+   git clone https://github.com/Inaryuta/Entregable-I-Modelos-Programacion-II
 ```
 
 2. **Navega al directorio del repositorio clonado:**
 ```bash
-   cd Modelos-II
+   cd Entregable-I-Modelos-Programacion-II
 ```
 
 3. **Ejecutar el main:**
