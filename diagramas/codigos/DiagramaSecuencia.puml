@@ -3,26 +3,27 @@ actor Usuario
 participant Main
 participant Banda
 participant "musicos: Musico"
-participant Musico
+collections Musico
 participant "instrumentos: Instrumento"
-participant Instrumento
+collections Instrumento
 
 
 Usuario -> Main : main()
 activate Main
 
 create "instrumentos: Instrumento"
-Main -> "instrumentos: Instrumento" : instrumentos = [...]
+Main -> "instrumentos: Instrumento" : instrumentos = [Guitarra(), ..., Acordeon()]
 
-group instantiate [10 times]
+group loop [10 times]
     create Instrumento
     "instrumentos: Instrumento" -> Instrumento : Instrumento()
     activate "instrumentos: Instrumento"
 
     note right of "instrumentos: Instrumento"
-        Se asignan guitarras,
-        violines, pianos y otros
-        a la lista de instrumentos
+        Se asignan guitarras, violines, 
+        pianos  y otros a la lista de 
+        instrumentos. Cada clase es una
+        implementación de Instrumento
     end note
 
     Instrumento -> Instrumento: __new__()
@@ -36,9 +37,9 @@ end
 
 
 create "musicos: Musico"
-Main -> "musicos: Musico" : musicos = [...]
+Main -> "musicos: Musico" : musicos = [Musico("Samuel"), ..., Musico("Amir")]
 
-group instantiate [10 times]
+group loop [10 times]
     create Musico
     "musicos: Musico" -> Musico: Musico("{nombre}")
     activate "musicos: Musico"
